@@ -1,61 +1,516 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nirvion Labs</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nirvion Labs — Building Apps for Students</title>
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
     body {
       font-family: Arial, sans-serif;
       background: #0f1117;
+      color: #e0e0e0;
+      line-height: 1.75;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── Nav ────────────────────────────────────────────────── */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 32px;
+      border-bottom: 1px solid #2e3250;
+      background: #0f1117;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .nav-brand {
+      font-size: 1rem;
+      font-weight: 700;
       color: #ffffff;
+      letter-spacing: 0.3px;
+    }
+    .nav-brand span { color: #4a9eff; }
+    .nav-links a {
+      color: #888;
+      text-decoration: none;
+      font-size: 0.875rem;
+      margin-left: 24px;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: #4a9eff; }
+
+    /* ── Hero ───────────────────────────────────────────────── */
+    .hero {
+      flex: 1;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      min-height: 100vh;
       text-align: center;
-      padding: 20px;
+      padding: 80px 20px 60px;
     }
-    h1 { font-size: 2rem; margin-bottom: 8px; }
-    p  { color: #aaaaaa; margin-bottom: 32px; line-height: 1.6; }
-    .badge {
-      background: #1e2130;
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(46, 117, 182, 0.15);
+      border: 1px solid rgba(46, 117, 182, 0.4);
+      border-radius: 20px;
+      padding: 5px 14px;
+      font-size: 0.78rem;
+      color: #4a9eff;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      margin-bottom: 28px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1.2;
+      margin-bottom: 16px;
+      max-width: 640px;
+    }
+    .hero h1 span { color: #4a9eff; }
+
+    .hero p {
+      color: #888;
+      font-size: 1rem;
+      max-width: 480px;
+      margin-bottom: 40px;
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .btn-primary {
+      background: #2e75b6;
+      color: #fff;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .btn-primary:hover {
+      background: #3a8fd1;
+      transform: translateY(-1px);
+    }
+    .btn-outline {
+      background: transparent;
+      color: #aaa;
+      border: 1px solid #2e3250;
+      padding: 12px 24px;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: border-color 0.2s, color 0.2s, transform 0.15s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .btn-outline:hover {
+      border-color: #4a9eff;
+      color: #4a9eff;
+      transform: translateY(-1px);
+    }
+
+    /* ── Divider ────────────────────────────────────────────── */
+    .divider {
+      width: 100%;
+      max-width: 860px;
+      margin: 0 auto;
+      border: none;
+      border-top: 1px solid #2e3250;
+    }
+
+    /* ── Apps section ───────────────────────────────────────── */
+    .apps-section {
+      padding: 60px 20px;
+      max-width: 860px;
+      margin: 0 auto;
+      width: 100%;
+    }
+    .section-label {
+      text-align: center;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      color: #555;
+      text-transform: uppercase;
+      margin-bottom: 32px;
+    }
+
+    .app-card {
+      background: #1a1f36;
+      border: 1px solid #2e3250;
+      border-radius: 18px;
+      padding: 32px;
+      display: flex;
+      gap: 24px;
+      align-items: flex-start;
+      transition: border-color 0.2s, transform 0.2s;
+      margin-bottom: 20px;
+    }
+    .app-card:hover {
+      border-color: #3a4270;
+      transform: translateY(-2px);
+    }
+
+    .app-icon {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, #2e75b6, #1a4a7a);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      flex-shrink: 0;
+      box-shadow: 0 4px 16px rgba(46, 117, 182, 0.3);
+    }
+
+    .app-info { flex: 1; }
+    .app-info h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 4px;
+    }
+    .app-info .app-tagline {
+      color: #4a9eff;
+      font-size: 0.82rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+    .app-info p {
+      color: #888;
+      font-size: 0.88rem;
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+
+    .app-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+    .tag {
+      background: #0f1117;
+      border: 1px solid #2e3250;
+      border-radius: 20px;
+      padding: 3px 12px;
+      font-size: 0.75rem;
+      color: #777;
+    }
+
+    .app-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .btn-store {
+      background: #2e75b6;
+      color: #fff;
+      border: none;
+      padding: 9px 18px;
+      border-radius: 8px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .btn-store:hover { background: #3a8fd1; }
+    .btn-policy {
+      background: transparent;
+      color: #666;
+      border: 1px solid #2e3250;
+      padding: 9px 18px;
+      border-radius: 8px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: border-color 0.2s, color 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .btn-policy:hover { border-color: #4a9eff; color: #4a9eff; }
+
+    /* ── Features grid ──────────────────────────────────────── */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 14px;
+      margin-top: 20px;
+    }
+    .feature-item {
+      background: #0f1117;
       border: 1px solid #2e3250;
       border-radius: 12px;
-      padding: 20px 28px;
-      margin-bottom: 16px;
-      width: 100%;
-      max-width: 400px;
+      padding: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
-    .badge h2 { font-size: 1.1rem; margin-bottom: 4px; }
-    .badge span { color: #aaaaaa; font-size: 0.85rem; }
-    .links { margin-top: 32px; }
-    .links a {
+    .feature-item span:first-child { font-size: 1.1rem; }
+    .feature-item span:last-child {
+      font-size: 0.82rem;
+      color: #888;
+    }
+
+    /* ── Legal section ──────────────────────────────────────── */
+    .legal-section {
+      padding: 40px 20px;
+      max-width: 860px;
+      margin: 0 auto;
+      width: 100%;
+    }
+    .legal-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+    }
+    .legal-card {
+      background: #1a1f36;
+      border: 1px solid #2e3250;
+      border-radius: 14px;
+      padding: 24px;
+      text-decoration: none;
+      transition: border-color 0.2s, transform 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .legal-card:hover {
+      border-color: #4a9eff;
+      transform: translateY(-2px);
+    }
+    .legal-icon {
+      font-size: 1.8rem;
+      flex-shrink: 0;
+    }
+    .legal-card h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 3px;
+    }
+    .legal-card p {
+      font-size: 0.78rem;
+      color: #666;
+    }
+
+    /* ── Contact section ────────────────────────────────────── */
+    .contact-section {
+      padding: 40px 20px 60px;
+      max-width: 860px;
+      margin: 0 auto;
+      width: 100%;
+      text-align: center;
+    }
+    .contact-section h3 {
+      font-size: 1.1rem;
+      color: #ffffff;
+      margin-bottom: 8px;
+    }
+    .contact-section p {
+      color: #666;
+      font-size: 0.88rem;
+      margin-bottom: 16px;
+    }
+    .contact-section a {
       color: #4a9eff;
       text-decoration: none;
-      margin: 0 12px;
-      font-size: 0.9rem;
+      font-weight: 600;
     }
-    .links a:hover { text-decoration: underline; }
+    .contact-section a:hover { text-decoration: underline; }
+
+    /* ── Footer ─────────────────────────────────────────────── */
+    footer {
+      border-top: 1px solid #2e3250;
+      padding: 24px 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    footer p {
+      color: #444;
+      font-size: 0.8rem;
+    }
+    .footer-links a {
+      color: #555;
+      text-decoration: none;
+      font-size: 0.8rem;
+      margin-left: 20px;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: #4a9eff; }
+
+    /* ── Responsive ─────────────────────────────────────────── */
+    @media (max-width: 560px) {
+      .app-card { flex-direction: column; }
+      nav { padding: 14px 20px; }
+      .nav-links a { margin-left: 14px; }
+      footer { flex-direction: column; text-align: center; }
+      .footer-links a { margin: 0 8px; }
+    }
   </style>
 </head>
 <body>
 
-  <h1>Nirvion Labs</h1>
-  <p>Building useful apps for students and learners.</p>
+  <!-- ── Nav ──────────────────────────────────────────────────── -->
+  <nav>
+    <div class="nav-brand">Nirvion<span>Labs</span></div>
+    <div class="nav-links">
+      <a href="#apps">Apps</a>
+      <a href="#legal">Legal</a>
+      <a href="mailto:nirvionlabs@gmail.com">Contact</a>
+    </div>
+  </nav>
 
-  <div class="badge">
-    <h2>📚 CSQuiz</h2>
-    <span>Free MCQ practice app for Computer Science students</span>
+  <!-- ── Hero ─────────────────────────────────────────────────── -->
+  <div class="hero">
+    <div class="hero-badge">✦ Indie App Developer</div>
+    <h1>Building apps for<br /><span>students who want to learn smarter</span></h1>
+    <p>Simple, offline-first tools designed to help you study better and achieve more.</p>
+    <div class="hero-btns">
+      <a href="#apps" class="btn-primary">📱 Our Apps</a>
+      <a href="mailto:nirvionlabs@gmail.com" class="btn-outline">✉️ Get in Touch</a>
+    </div>
   </div>
 
-  <div class="links">
-    <a href="/privacy-policy">Privacy Policy</a>
-    <a href="/terms-of-service">Terms of Service</a>
-    <a href="mailto:nirvionlabs@gmail.com">Contact</a>
-  </div>
+  <hr class="divider" />
+
+  <!-- ── Apps ─────────────────────────────────────────────────── -->
+  <section class="apps-section" id="apps">
+    <div class="section-label">Our Apps</div>
+
+    <div class="app-card">
+      <div class="app-icon">📚</div>
+      <div class="app-info">
+        <h3>CSQuiz</h3>
+        <div class="app-tagline">Study smart. Score high.</div>
+        <p>
+          A free offline-first MCQ practice app for computer science students.
+          Download subjects, practice topic by topic, take timed tests, and
+          track your daily study streak — all stored locally on your device.
+        </p>
+        <div class="app-tags">
+          <span class="tag">📖 Education</span>
+          <span class="tag">🌐 Computer Science</span>
+          <span class="tag">📴 Offline First</span>
+          <span class="tag">🆓 Free</span>
+          <span class="tag">🤖 Android</span>
+        </div>
+        <div class="app-actions">
+          <a
+            href="https://play.google.com/store/apps/details?id=com.nirvionlabs.csquiz"
+            target="_blank"
+            class="btn-store"
+          >
+            ▶ Play Store
+          </a>
+          <a href="/privacy-policy" class="btn-policy">🔒 Privacy Policy</a>
+          <a href="/terms-of-service" class="btn-policy">⚖️ Terms of Service</a>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-item">
+            <span>✅</span><span>Topic-by-topic practice</span>
+          </div>
+          <div class="feature-item">
+            <span>📝</span><span>Timed custom tests</span>
+          </div>
+          <div class="feature-item">
+            <span>🔖</span><span>Question bookmarks</span>
+          </div>
+          <div class="feature-item">
+            <span>🔥</span><span>Daily study streak</span>
+          </div>
+          <div class="feature-item">
+            <span>📴</span><span>Works offline</span>
+          </div>
+          <div class="feature-item">
+            <span>🌙</span><span>Dark mode support</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- ── Legal ────────────────────────────────────────────────── -->
+  <section class="legal-section" id="legal">
+    <div class="section-label">Legal Documents</div>
+    <div class="legal-cards">
+      <a href="/privacy-policy" class="legal-card">
+        <div class="legal-icon">🔒</div>
+        <div>
+          <h4>Privacy Policy</h4>
+          <p>How we handle your data — clearly explained.</p>
+        </div>
+      </a>
+      <a href="/terms-of-service" class="legal-card">
+        <div class="legal-icon">⚖️</div>
+        <div>
+          <h4>Terms of Service</h4>
+          <p>Rules and guidelines for using CSQuiz.</p>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- ── Contact ───────────────────────────────────────────────── -->
+  <section class="contact-section">
+    <h3>Get in Touch</h3>
+    <p>Have a question, suggestion, or found a bug? We'd love to hear from you.</p>
+    <a href="mailto:nirvionlabs@gmail.com">nirvionlabs@gmail.com</a>
+  </section>
+
+  <!-- ── Footer ───────────────────────────────────────────────── -->
+  <footer>
+    <p>© <span id="year"></span> CSQuiz by Nirvion Labs. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="/privacy-policy">Privacy Policy</a>
+      <a href="/terms-of-service">Terms of Service</a>
+      <a href="mailto:nirvionlabs@gmail.com">Contact</a>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 
 </body>
 </html>
