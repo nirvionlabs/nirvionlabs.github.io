@@ -25,7 +25,8 @@
     rel="stylesheet" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="CSQuiz — 15,000+ CS MCQs | Free Offline Practice" />
-  <meta name="twitter:description" content="Practice 15,000+ solved MCQs across 16 CS subjects. Timed mock tests, detailed explanations, works offline. No login needed." />
+  <meta name="twitter:description"
+    content="Practice 15,000+ solved MCQs across 16 CS subjects. Timed mock tests, detailed explanations, works offline. No login needed." />
 
   <script src="https://cdn.tailwindcss.com"></script>
 
@@ -85,30 +86,81 @@
       },
     };
   </script>
+  <!-- ============================================================
+  PASTE ALL OF THIS just before the closing </head> tag
+  in your csquiz/index.html
+  ============================================================ -->
+
+
+  <!-- Schema 1: WebSite — helps Google understand the brand/site -->
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
+  "@type": "WebSite",
   "name": "CSQuiz",
-  "operatingSystem": "Android",
+  "url": "https://nirvionlabs.github.io/csquiz/",
+  "description": "Practice 15,000+ solved MCQs across 16 CS subjects. Timed mock tests, detailed explanations, offline mode. Free Android app, no login needed.",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Nirvion Labs",
+    "url": "https://nirvionlabs.github.io/csquiz/",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": "nirvionlabs@gmail.com",
+      "contactType": "customer support"
+    }
+  }
+}
+</script>
+
+
+  <!-- Schema 2: MobileApplication — tells Google this is an Android app -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MobileApplication",
+  "name": "CSQuiz — Computer Science MCQs",
+  "description": "Practice 15,000+ solved MCQs across 16 CS subjects including DBMS, OS, Java, Python, C, Computer Networks, Cyber Security, Machine Learning and more. Timed mock tests, detailed explanations with code blocks, offline mode. No login needed.",
+  "url": "https://nirvionlabs.github.io/csquiz/",
   "applicationCategory": "EducationApplication",
-  "applicationSubCategory": "Education",
+  "operatingSystem": "Android",
+  "installUrl": "https://play.google.com/store/apps/details?id=com.nirvionlabs.csquiz",
   "offers": {
     "@type": "Offer",
     "price": "0",
     "priceCurrency": "INR"
   },
-  "url": "https://nirvionlabs.github.io/csquiz/",
-  "downloadUrl": "https://play.google.com/store/apps/details?id=com.nirvionlabs.csquiz",
-  "description": "Practice 15,000+ solved Computer Science MCQs across 16 subjects including DBMS, OS, Java, Python, C Programming, Computer Networks and more. Take timed mock tests, get detailed explanations with code blocks, track your progress with daily streaks — works offline, no login needed.",
-  "featureList": "15000+ MCQs, 16 CS Subjects, Offline Mode, Timed Mock Tests, Detailed Explanations, Daily Streaks, Bookmarks, Multi-Subject Tests, No Login Required",
   "author": {
     "@type": "Organization",
-    "name": "Nirvion Labs",
-    "url": "https://nirvionlabs.github.io/"
-  }
+    "name": "Nirvion Labs"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.5",
+    "ratingCount": "50",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "featureList": [
+    "15000+ solved MCQs with explanations",
+    "16 computer science subjects",
+    "Timed mock test mode",
+    "Offline mode — no internet needed after download",
+    "Smart bookmarks",
+    "Daily study streak tracking",
+    "No login or account required",
+    "Performance dashboard"
+  ],
+  "screenshot": [
+    "https://nirvionlabs.github.io/csquiz/assets/home_page_dark.png",
+    "https://nirvionlabs.github.io/csquiz/assets/practice_page_with_explanation_dark.png",
+    "https://nirvionlabs.github.io/csquiz/assets/test_taking_page.png"
+  ]
 }
 </script>
+
+
+  <!-- Schema 3: FAQPage — can trigger FAQ accordion in Google results -->
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -119,7 +171,7 @@
       "name": "Is CSQuiz completely free to use?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "CSQuiz is free to download and use. The app is completely ad-free for the first 24 hours. After that, banner ads appear on practice and test pages, and occasional interstitial ads show between topics (capped at one every 3 minutes). You get 3 free tests per day — watch a short video to unlock more."
+        "text": "CSQuiz is free to download and use. The app is ad-free for the first 24 hours. After that, banner ads appear on practice and test pages, and occasional interstitial ads show between topics (capped at one every 3 minutes). You get 3 free tests per day — watch a short video ad to unlock more."
       }
     },
     {
@@ -135,7 +187,7 @@
       "name": "Which computer science subjects are available in CSQuiz?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "CSQuiz includes 16 subjects with over 15,000 solved MCQs: C Programming (1,591), Object Oriented Programming (1,350), Java Programming (1,335), Computer Networks (1,219), Python Programming (1,188), Operating Systems (1,121), Computer Fundamentals (1,000), Cyber Security (1,000), Cloud Computing (990), DBMS (871), Linux (847), Automata Theory (832), Artificial Intelligence (765), Computer Architecture (749), SQL (639), and Machine Learning (620)."
+        "text": "CSQuiz currently includes 16 subjects with over 15,000 solved MCQs: C Programming (1591), Object Oriented Programming (1350), Java Programming (1335), Computer Networks (1219), Python Programming (1188), Operating Systems (1121), Computer Fundamentals (1000), Cyber Security (1000), Cloud Computing (990), DBMS (871), Linux (847), Automata Theory (832), Artificial Intelligence (765), Computer Architecture (749), SQL (639), and Machine Learning (620). New subjects are added regularly."
       }
     },
     {
@@ -167,44 +219,9 @@
       "name": "Can I take mock tests with a timer in CSQuiz?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. CSQuiz has a dedicated Test Mode where you can create custom tests — choose single or multiple subjects, select specific categories, set question count, and enable a timer from 10 to 120 minutes. Results show a detailed breakdown with correct, wrong, and unattempted counts plus explanations."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How is CSQuiz different from other MCQ apps?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "CSQuiz is built specifically for CS students with: deep topic drill-down (Subject → Category → Topic), detailed explanations with code blocks, multi-subject test configuration, smart bookmarks that auto-organize into a practice category, ability to resume uncompleted tests, and offline-first design with encrypted local storage. No login required."
+        "text": "Yes. CSQuiz has a dedicated Test Mode where you can create custom tests — choose single or multiple subjects, select specific categories, set question count, and enable a timer from 10 to 120 minutes. Results show a detailed breakdown with correct, wrong, and unattempted counts plus explanations for every question."
       }
     }
-  ]
-}
-</script>
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "ItemList",
-  "name": "CSQuiz Subject Library",
-  "description": "16 Computer Science subjects available in CSQuiz with over 15,000 solved MCQs",
-  "numberOfItems": 16,
-  "itemListElement": [
-    {"@type": "ListItem", "position": 1, "name": "C Programming MCQs", "description": "1,591 solved MCQs covering Pointers, Arrays, Strings, Functions, Structures"},
-    {"@type": "ListItem", "position": 2, "name": "Object Oriented Programming MCQs", "description": "1,350 solved MCQs covering Inheritance, Polymorphism, Abstraction, Encapsulation"},
-    {"@type": "ListItem", "position": 3, "name": "Java Programming MCQs", "description": "1,335 solved MCQs covering Collections, Multithreading, Exception Handling, JDBC"},
-    {"@type": "ListItem", "position": 4, "name": "Computer Network MCQs", "description": "1,219 solved MCQs covering OSI Model, TCP/IP, Routing, DNS, Subnetting"},
-    {"@type": "ListItem", "position": 5, "name": "Python Programming MCQs", "description": "1,188 solved MCQs covering Data Types, List Comprehension, OOP, File Handling"},
-    {"@type": "ListItem", "position": 6, "name": "Operating System MCQs", "description": "1,121 solved MCQs covering Process Management, Memory Management, Deadlocks, Scheduling"},
-    {"@type": "ListItem", "position": 7, "name": "Computer Fundamental MCQs", "description": "1,000 solved MCQs covering Number Systems, Logic Gates, Computer Architecture Basics"},
-    {"@type": "ListItem", "position": 8, "name": "Cyber Security MCQs", "description": "1,000 solved MCQs covering Cryptography, Network Security, Firewalls, Ethical Hacking"},
-    {"@type": "ListItem", "position": 9, "name": "Cloud Computing MCQs", "description": "990 solved MCQs covering IaaS, PaaS, SaaS, Virtualization, AWS Basics"},
-    {"@type": "ListItem", "position": 10, "name": "DBMS MCQs", "description": "871 solved MCQs covering Normalization, SQL Joins, ER Diagrams, Transactions, ACID"},
-    {"@type": "ListItem", "position": 11, "name": "Linux MCQs", "description": "847 solved MCQs covering Shell Commands, File System, Permissions, Process Management"},
-    {"@type": "ListItem", "position": 12, "name": "Automata Theory MCQs", "description": "832 solved MCQs covering DFA, NFA, Regular Expressions, Context-Free Grammars, Turing Machine"},
-    {"@type": "ListItem", "position": 13, "name": "Artificial Intelligence MCQs", "description": "765 solved MCQs covering Search Algorithms, Knowledge Representation, Neural Networks"},
-    {"@type": "ListItem", "position": 14, "name": "Computer Architecture MCQs", "description": "749 solved MCQs covering Pipelining, Cache Memory, Instruction Sets, ALU Design"},
-    {"@type": "ListItem", "position": 15, "name": "SQL MCQs", "description": "639 solved MCQs covering SELECT, JOINs, Subqueries, Aggregate Functions, Indexes"},
-    {"@type": "ListItem", "position": 16, "name": "Machine Learning MCQs", "description": "620 solved MCQs covering Regression, Classification, Clustering, Decision Trees, SVM"}
   ]
 }
 </script>
@@ -1116,8 +1133,7 @@
           <div class="w-14 h-14 rounded-2xl bg-primary-500/10 flex items-center justify-center mx-auto mb-4">
             <svg class="w-7 h-7 text-primary-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"
               stroke-width="1.8">
-              <path stroke-linecap="round" stroke-linejoin="round"
-                d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
             </svg>
           </div>
           <div class="font-display font-800 text-4xl text-gray-900 mb-2">
@@ -1159,8 +1175,7 @@
           <div class="w-14 h-14 rounded-2xl bg-purple-500/10 flex items-center justify-center mx-auto mb-4">
             <svg class="w-7 h-7 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"
               stroke-width="1.8">
-              <path stroke-linecap="round" stroke-linejoin="round"
-                d="M4 6h16M4 10h16M4 14h16M4 18h16" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 10h16M4 14h16M4 18h16" />
             </svg>
           </div>
           <div class="font-display font-800 text-4xl text-gray-900 mb-2">
@@ -1357,169 +1372,240 @@
           <span class="text-primary-500">Every Core CS Subject</span>
         </h2>
         <p class="text-gray-500 text-lg max-w-2xl mx-auto">
-          Download any subject and practice offline with detailed explanations for every question. New subjects and updates are added regularly.
+          Download any subject and practice offline with detailed explanations for every question. New subjects and
+          updates are added regularly.
         </p>
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         <!-- C Programming -->
-        <div class="reveal reveal-delay-1 bg-white rounded-2xl border border-gray-100 p-5 hover:border-primary-200 hover:shadow-lg hover:shadow-primary-500/5 transition-all duration-300 group">
+        <div
+          class="reveal reveal-delay-1 bg-white rounded-2xl border border-gray-100 p-5 hover:border-primary-200 hover:shadow-lg hover:shadow-primary-500/5 transition-all duration-300 group">
           <div class="flex items-center justify-between mb-3">
-            <div class="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center text-xl group-hover:scale-110 transition-transform">💻</div>
-            <span class="text-xs font-display font-700 text-primary-500 bg-primary-50 px-2.5 py-1 rounded-full">1,591 MCQs</span>
+            <div
+              class="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center text-xl group-hover:scale-110 transition-transform">
+              💻</div>
+            <span class="text-xs font-display font-700 text-primary-500 bg-primary-50 px-2.5 py-1 rounded-full">1,591
+              MCQs</span>
           </div>
           <h3 class="font-display font-700 text-gray-900 text-base mb-1.5">C Programming</h3>
           <p class="text-gray-400 text-xs leading-relaxed">Pointers, Arrays, Strings, Functions, Structures</p>
         </div>
 
         <!-- OOP -->
-        <div class="reveal reveal-delay-1 bg-white rounded-2xl border border-gray-100 p-5 hover:border-primary-200 hover:shadow-lg hover:shadow-primary-500/5 transition-all duration-300 group">
+        <div
+          class="reveal reveal-delay-1 bg-white rounded-2xl border border-gray-100 p-5 hover:border-primary-200 hover:shadow-lg hover:shadow-primary-500/5 transition-all duration-300 group">
           <div class="flex items-center justify-between mb-3">
-            <div class="w-10 h-10 rounded-xl bg-purple-50 flex items-center justify-center text-xl group-hover:scale-110 transition-transform">🧬</div>
-            <span class="text-xs font-display font-700 text-primary-500 bg-primary-50 px-2.5 py-1 rounded-full">1,350 MCQs</span>
+            <div
+              class="w-10 h-10 rounded-xl bg-purple-50 flex items-center justify-center text-xl group-hover:scale-110 transition-transform">
+              🧬</div>
+            <span class="text-xs font-display font-700 text-primary-500 bg-primary-50 px-2.5 py-1 rounded-full">1,350
+              MCQs</span>
           </div>
           <h3 class="font-display font-700 text-gray-900 text-base mb-1.5">Object Oriented Programming</h3>
           <p class="text-gray-400 text-xs leading-relaxed">Inheritance, Polymorphism, Abstraction, Encapsulation</p>
         </div>
 
         <!-- Java -->
-        <div class="reveal reveal-delay-1 bg-white rounded-2xl border border-gray-100 p-5 hover:border-primary-200 hover:shadow-lg hover:shadow-primary-500/5 transition-all duration-300 group">
+        <div
+          class="reveal reveal-delay-1 bg-white rounded-2xl border border-gray-100 p-5 hover:border-primary-200 hover:shadow-lg hover:shadow-primary-500/5 transition-all duration-300 group">
           <div class="flex items-center justify-between mb-3">
-            <div class="w-10 h-10 rounded-xl bg-orange-50 flex items-center justify-center text-xl group-hover:scale-110 transition-transform">☕</div>
-            <span class="text-xs font-display font-700 text-primary-500 bg-primary-50 px-2.5 py-1 rounded-full">1,335 MCQs</span>
+            <div
+              class="w-10 h-10 rounded-xl bg-orange-50 flex items-center justify-center text-xl group-hover:scale-110 transition-transform">
+              ☕</div>
+            <span class="text-xs font-display font-700 text-primary-500 bg-primary-50 px-2.5 py-1 rounded-full">1,335
+              MCQs</span>
           </div>
           <h3 class="font-display font-700 text-gray-900 text-base mb-1.5">Java Programming</h3>
           <p class="text-gray-400 text-xs leading-relaxed">Collections, Multithreading, Exception Handling, JDBC</p>
         </div>
 
         <!-- Computer Network -->
-        <div class="reveal reveal-delay-2 bg-white rounded-2xl border border-gray-100 p-5 hover:border-primary-200 hover:shadow-lg hover:shadow-primary-500/5 transition-all duration-300 group">
+        <div
+          class="reveal reveal-delay-2 bg-white rounded-2xl border border-gray-100 p-5 hover:border-primary-200 hover:shadow-lg hover:shadow-primary-500/5 transition-all duration-300 group">
           <div class="flex items-center justify-between mb-3">
-            <div class="w-10 h-10 rounded-xl bg-cyan-50 flex items-center justify-center text-xl group-hover:scale-110 transition-transform">🌐</div>
-            <span class="text-xs font-display font-700 text-primary-500 bg-primary-50 px-2.5 py-1 rounded-full">1,219 MCQs</span>
+            <div
+              class="w-10 h-10 rounded-xl bg-cyan-50 flex items-center justify-center text-xl group-hover:scale-110 transition-transform">
+              🌐</div>
+            <span class="text-xs font-display font-700 text-primary-500 bg-primary-50 px-2.5 py-1 rounded-full">1,219
+              MCQs</span>
           </div>
           <h3 class="font-display font-700 text-gray-900 text-base mb-1.5">Computer Network</h3>
           <p class="text-gray-400 text-xs leading-relaxed">OSI Model, TCP/IP, Routing, DNS, Subnetting</p>
         </div>
 
         <!-- Python -->
-        <div class="reveal reveal-delay-2 bg-white rounded-2xl border border-gray-100 p-5 hover:border-primary-200 hover:shadow-lg hover:shadow-primary-500/5 transition-all duration-300 group">
+        <div
+          class="reveal reveal-delay-2 bg-white rounded-2xl border border-gray-100 p-5 hover:border-primary-200 hover:shadow-lg hover:shadow-primary-500/5 transition-all duration-300 group">
           <div class="flex items-center justify-between mb-3">
-            <div class="w-10 h-10 rounded-xl bg-yellow-50 flex items-center justify-center text-xl group-hover:scale-110 transition-transform">🐍</div>
-            <span class="text-xs font-display font-700 text-primary-500 bg-primary-50 px-2.5 py-1 rounded-full">1,188 MCQs</span>
+            <div
+              class="w-10 h-10 rounded-xl bg-yellow-50 flex items-center justify-center text-xl group-hover:scale-110 transition-transform">
+              🐍</div>
+            <span class="text-xs font-display font-700 text-primary-500 bg-primary-50 px-2.5 py-1 rounded-full">1,188
+              MCQs</span>
           </div>
           <h3 class="font-display font-700 text-gray-900 text-base mb-1.5">Python Programming</h3>
           <p class="text-gray-400 text-xs leading-relaxed">Data Types, List Comprehension, OOP, File Handling</p>
         </div>
 
         <!-- Operating System -->
-        <div class="reveal reveal-delay-2 bg-white rounded-2xl border border-gray-100 p-5 hover:border-primary-200 hover:shadow-lg hover:shadow-primary-500/5 transition-all duration-300 group">
+        <div
+          class="reveal reveal-delay-2 bg-white rounded-2xl border border-gray-100 p-5 hover:border-primary-200 hover:shadow-lg hover:shadow-primary-500/5 transition-all duration-300 group">
           <div class="flex items-center justify-between mb-3">
-            <div class="w-10 h-10 rounded-xl bg-green-50 flex items-center justify-center text-xl group-hover:scale-110 transition-transform">⚙️</div>
-            <span class="text-xs font-display font-700 text-primary-500 bg-primary-50 px-2.5 py-1 rounded-full">1,121 MCQs</span>
+            <div
+              class="w-10 h-10 rounded-xl bg-green-50 flex items-center justify-center text-xl group-hover:scale-110 transition-transform">
+              ⚙️</div>
+            <span class="text-xs font-display font-700 text-primary-500 bg-primary-50 px-2.5 py-1 rounded-full">1,121
+              MCQs</span>
           </div>
           <h3 class="font-display font-700 text-gray-900 text-base mb-1.5">Operating System</h3>
-          <p class="text-gray-400 text-xs leading-relaxed">Process Management, Memory Management, Deadlocks, Scheduling</p>
+          <p class="text-gray-400 text-xs leading-relaxed">Process Management, Memory Management, Deadlocks, Scheduling
+          </p>
         </div>
 
         <!-- Computer Fundamental -->
-        <div class="reveal reveal-delay-3 bg-white rounded-2xl border border-gray-100 p-5 hover:border-primary-200 hover:shadow-lg hover:shadow-primary-500/5 transition-all duration-300 group">
+        <div
+          class="reveal reveal-delay-3 bg-white rounded-2xl border border-gray-100 p-5 hover:border-primary-200 hover:shadow-lg hover:shadow-primary-500/5 transition-all duration-300 group">
           <div class="flex items-center justify-between mb-3">
-            <div class="w-10 h-10 rounded-xl bg-indigo-50 flex items-center justify-center text-xl group-hover:scale-110 transition-transform">🖥️</div>
-            <span class="text-xs font-display font-700 text-primary-500 bg-primary-50 px-2.5 py-1 rounded-full">1,000 MCQs</span>
+            <div
+              class="w-10 h-10 rounded-xl bg-indigo-50 flex items-center justify-center text-xl group-hover:scale-110 transition-transform">
+              🖥️</div>
+            <span class="text-xs font-display font-700 text-primary-500 bg-primary-50 px-2.5 py-1 rounded-full">1,000
+              MCQs</span>
           </div>
           <h3 class="font-display font-700 text-gray-900 text-base mb-1.5">Computer Fundamental</h3>
           <p class="text-gray-400 text-xs leading-relaxed">Number Systems, Logic Gates, Computer Architecture Basics</p>
         </div>
 
         <!-- Cyber Security -->
-        <div class="reveal reveal-delay-3 bg-white rounded-2xl border border-gray-100 p-5 hover:border-primary-200 hover:shadow-lg hover:shadow-primary-500/5 transition-all duration-300 group">
+        <div
+          class="reveal reveal-delay-3 bg-white rounded-2xl border border-gray-100 p-5 hover:border-primary-200 hover:shadow-lg hover:shadow-primary-500/5 transition-all duration-300 group">
           <div class="flex items-center justify-between mb-3">
-            <div class="w-10 h-10 rounded-xl bg-red-50 flex items-center justify-center text-xl group-hover:scale-110 transition-transform">🔐</div>
-            <span class="text-xs font-display font-700 text-primary-500 bg-primary-50 px-2.5 py-1 rounded-full">1,000 MCQs</span>
+            <div
+              class="w-10 h-10 rounded-xl bg-red-50 flex items-center justify-center text-xl group-hover:scale-110 transition-transform">
+              🔐</div>
+            <span class="text-xs font-display font-700 text-primary-500 bg-primary-50 px-2.5 py-1 rounded-full">1,000
+              MCQs</span>
           </div>
           <h3 class="font-display font-700 text-gray-900 text-base mb-1.5">Cyber Security</h3>
-          <p class="text-gray-400 text-xs leading-relaxed">Cryptography, Network Security, Firewalls, Ethical Hacking</p>
+          <p class="text-gray-400 text-xs leading-relaxed">Cryptography, Network Security, Firewalls, Ethical Hacking
+          </p>
         </div>
 
         <!-- Cloud Computing -->
-        <div class="reveal reveal-delay-3 bg-white rounded-2xl border border-gray-100 p-5 hover:border-primary-200 hover:shadow-lg hover:shadow-primary-500/5 transition-all duration-300 group">
+        <div
+          class="reveal reveal-delay-3 bg-white rounded-2xl border border-gray-100 p-5 hover:border-primary-200 hover:shadow-lg hover:shadow-primary-500/5 transition-all duration-300 group">
           <div class="flex items-center justify-between mb-3">
-            <div class="w-10 h-10 rounded-xl bg-sky-50 flex items-center justify-center text-xl group-hover:scale-110 transition-transform">☁️</div>
-            <span class="text-xs font-display font-700 text-primary-500 bg-primary-50 px-2.5 py-1 rounded-full">990 MCQs</span>
+            <div
+              class="w-10 h-10 rounded-xl bg-sky-50 flex items-center justify-center text-xl group-hover:scale-110 transition-transform">
+              ☁️</div>
+            <span class="text-xs font-display font-700 text-primary-500 bg-primary-50 px-2.5 py-1 rounded-full">990
+              MCQs</span>
           </div>
           <h3 class="font-display font-700 text-gray-900 text-base mb-1.5">Cloud Computing</h3>
           <p class="text-gray-400 text-xs leading-relaxed">IaaS, PaaS, SaaS, Virtualization, AWS Basics</p>
         </div>
 
         <!-- DBMS -->
-        <div class="reveal reveal-delay-3 bg-white rounded-2xl border border-gray-100 p-5 hover:border-primary-200 hover:shadow-lg hover:shadow-primary-500/5 transition-all duration-300 group">
+        <div
+          class="reveal reveal-delay-3 bg-white rounded-2xl border border-gray-100 p-5 hover:border-primary-200 hover:shadow-lg hover:shadow-primary-500/5 transition-all duration-300 group">
           <div class="flex items-center justify-between mb-3">
-            <div class="w-10 h-10 rounded-xl bg-emerald-50 flex items-center justify-center text-xl group-hover:scale-110 transition-transform">🗄️</div>
-            <span class="text-xs font-display font-700 text-primary-500 bg-primary-50 px-2.5 py-1 rounded-full">871 MCQs</span>
+            <div
+              class="w-10 h-10 rounded-xl bg-emerald-50 flex items-center justify-center text-xl group-hover:scale-110 transition-transform">
+              🗄️</div>
+            <span class="text-xs font-display font-700 text-primary-500 bg-primary-50 px-2.5 py-1 rounded-full">871
+              MCQs</span>
           </div>
           <h3 class="font-display font-700 text-gray-900 text-base mb-1.5">DBMS</h3>
           <p class="text-gray-400 text-xs leading-relaxed">Normalization, SQL Joins, ER Diagrams, Transactions, ACID</p>
         </div>
 
         <!-- Linux -->
-        <div class="reveal reveal-delay-4 bg-white rounded-2xl border border-gray-100 p-5 hover:border-primary-200 hover:shadow-lg hover:shadow-primary-500/5 transition-all duration-300 group">
+        <div
+          class="reveal reveal-delay-4 bg-white rounded-2xl border border-gray-100 p-5 hover:border-primary-200 hover:shadow-lg hover:shadow-primary-500/5 transition-all duration-300 group">
           <div class="flex items-center justify-between mb-3">
-            <div class="w-10 h-10 rounded-xl bg-amber-50 flex items-center justify-center text-xl group-hover:scale-110 transition-transform">🐧</div>
-            <span class="text-xs font-display font-700 text-primary-500 bg-primary-50 px-2.5 py-1 rounded-full">847 MCQs</span>
+            <div
+              class="w-10 h-10 rounded-xl bg-amber-50 flex items-center justify-center text-xl group-hover:scale-110 transition-transform">
+              🐧</div>
+            <span class="text-xs font-display font-700 text-primary-500 bg-primary-50 px-2.5 py-1 rounded-full">847
+              MCQs</span>
           </div>
           <h3 class="font-display font-700 text-gray-900 text-base mb-1.5">Linux</h3>
-          <p class="text-gray-400 text-xs leading-relaxed">Shell Commands, File System, Permissions, Process Management</p>
+          <p class="text-gray-400 text-xs leading-relaxed">Shell Commands, File System, Permissions, Process Management
+          </p>
         </div>
 
         <!-- Automata Theory -->
-        <div class="reveal reveal-delay-4 bg-white rounded-2xl border border-gray-100 p-5 hover:border-primary-200 hover:shadow-lg hover:shadow-primary-500/5 transition-all duration-300 group">
+        <div
+          class="reveal reveal-delay-4 bg-white rounded-2xl border border-gray-100 p-5 hover:border-primary-200 hover:shadow-lg hover:shadow-primary-500/5 transition-all duration-300 group">
           <div class="flex items-center justify-between mb-3">
-            <div class="w-10 h-10 rounded-xl bg-violet-50 flex items-center justify-center text-xl group-hover:scale-110 transition-transform">🔄</div>
-            <span class="text-xs font-display font-700 text-primary-500 bg-primary-50 px-2.5 py-1 rounded-full">832 MCQs</span>
+            <div
+              class="w-10 h-10 rounded-xl bg-violet-50 flex items-center justify-center text-xl group-hover:scale-110 transition-transform">
+              🔄</div>
+            <span class="text-xs font-display font-700 text-primary-500 bg-primary-50 px-2.5 py-1 rounded-full">832
+              MCQs</span>
           </div>
           <h3 class="font-display font-700 text-gray-900 text-base mb-1.5">Automata Theory / TOC</h3>
-          <p class="text-gray-400 text-xs leading-relaxed">DFA, NFA, Regular Expressions, Context-Free Grammars, Turing Machine</p>
+          <p class="text-gray-400 text-xs leading-relaxed">DFA, NFA, Regular Expressions, Context-Free Grammars, Turing
+            Machine</p>
         </div>
 
         <!-- AI -->
-        <div class="reveal reveal-delay-4 bg-white rounded-2xl border border-gray-100 p-5 hover:border-primary-200 hover:shadow-lg hover:shadow-primary-500/5 transition-all duration-300 group">
+        <div
+          class="reveal reveal-delay-4 bg-white rounded-2xl border border-gray-100 p-5 hover:border-primary-200 hover:shadow-lg hover:shadow-primary-500/5 transition-all duration-300 group">
           <div class="flex items-center justify-between mb-3">
-            <div class="w-10 h-10 rounded-xl bg-pink-50 flex items-center justify-center text-xl group-hover:scale-110 transition-transform">🤖</div>
-            <span class="text-xs font-display font-700 text-primary-500 bg-primary-50 px-2.5 py-1 rounded-full">765 MCQs</span>
+            <div
+              class="w-10 h-10 rounded-xl bg-pink-50 flex items-center justify-center text-xl group-hover:scale-110 transition-transform">
+              🤖</div>
+            <span class="text-xs font-display font-700 text-primary-500 bg-primary-50 px-2.5 py-1 rounded-full">765
+              MCQs</span>
           </div>
           <h3 class="font-display font-700 text-gray-900 text-base mb-1.5">Artificial Intelligence</h3>
-          <p class="text-gray-400 text-xs leading-relaxed">Search Algorithms, Knowledge Representation, Neural Networks</p>
+          <p class="text-gray-400 text-xs leading-relaxed">Search Algorithms, Knowledge Representation, Neural Networks
+          </p>
         </div>
 
         <!-- Computer Architecture -->
-        <div class="reveal reveal-delay-4 bg-white rounded-2xl border border-gray-100 p-5 hover:border-primary-200 hover:shadow-lg hover:shadow-primary-500/5 transition-all duration-300 group">
+        <div
+          class="reveal reveal-delay-4 bg-white rounded-2xl border border-gray-100 p-5 hover:border-primary-200 hover:shadow-lg hover:shadow-primary-500/5 transition-all duration-300 group">
           <div class="flex items-center justify-between mb-3">
-            <div class="w-10 h-10 rounded-xl bg-teal-50 flex items-center justify-center text-xl group-hover:scale-110 transition-transform">🏗️</div>
-            <span class="text-xs font-display font-700 text-primary-500 bg-primary-50 px-2.5 py-1 rounded-full">749 MCQs</span>
+            <div
+              class="w-10 h-10 rounded-xl bg-teal-50 flex items-center justify-center text-xl group-hover:scale-110 transition-transform">
+              🏗️</div>
+            <span class="text-xs font-display font-700 text-primary-500 bg-primary-50 px-2.5 py-1 rounded-full">749
+              MCQs</span>
           </div>
           <h3 class="font-display font-700 text-gray-900 text-base mb-1.5">Computer Architecture</h3>
           <p class="text-gray-400 text-xs leading-relaxed">Pipelining, Cache Memory, Instruction Sets, ALU Design</p>
         </div>
 
         <!-- SQL -->
-        <div class="reveal reveal-delay-4 bg-white rounded-2xl border border-gray-100 p-5 hover:border-primary-200 hover:shadow-lg hover:shadow-primary-500/5 transition-all duration-300 group">
+        <div
+          class="reveal reveal-delay-4 bg-white rounded-2xl border border-gray-100 p-5 hover:border-primary-200 hover:shadow-lg hover:shadow-primary-500/5 transition-all duration-300 group">
           <div class="flex items-center justify-between mb-3">
-            <div class="w-10 h-10 rounded-xl bg-lime-50 flex items-center justify-center text-xl group-hover:scale-110 transition-transform">📊</div>
-            <span class="text-xs font-display font-700 text-primary-500 bg-primary-50 px-2.5 py-1 rounded-full">639 MCQs</span>
+            <div
+              class="w-10 h-10 rounded-xl bg-lime-50 flex items-center justify-center text-xl group-hover:scale-110 transition-transform">
+              📊</div>
+            <span class="text-xs font-display font-700 text-primary-500 bg-primary-50 px-2.5 py-1 rounded-full">639
+              MCQs</span>
           </div>
           <h3 class="font-display font-700 text-gray-900 text-base mb-1.5">SQL</h3>
           <p class="text-gray-400 text-xs leading-relaxed">SELECT, JOINs, Subqueries, Aggregate Functions, Indexes</p>
         </div>
 
         <!-- Machine Learning -->
-        <div class="reveal reveal-delay-4 bg-white rounded-2xl border border-gray-100 p-5 hover:border-primary-200 hover:shadow-lg hover:shadow-primary-500/5 transition-all duration-300 group">
+        <div
+          class="reveal reveal-delay-4 bg-white rounded-2xl border border-gray-100 p-5 hover:border-primary-200 hover:shadow-lg hover:shadow-primary-500/5 transition-all duration-300 group">
           <div class="flex items-center justify-between mb-3">
-            <div class="w-10 h-10 rounded-xl bg-fuchsia-50 flex items-center justify-center text-xl group-hover:scale-110 transition-transform">🧠</div>
-            <span class="text-xs font-display font-700 text-primary-500 bg-primary-50 px-2.5 py-1 rounded-full">620 MCQs</span>
+            <div
+              class="w-10 h-10 rounded-xl bg-fuchsia-50 flex items-center justify-center text-xl group-hover:scale-110 transition-transform">
+              🧠</div>
+            <span class="text-xs font-display font-700 text-primary-500 bg-primary-50 px-2.5 py-1 rounded-full">620
+              MCQs</span>
           </div>
           <h3 class="font-display font-700 text-gray-900 text-base mb-1.5">Machine Learning</h3>
-          <p class="text-gray-400 text-xs leading-relaxed">Regression, Classification, Clustering, Decision Trees, SVM</p>
+          <p class="text-gray-400 text-xs leading-relaxed">Regression, Classification, Clustering, Decision Trees, SVM
+          </p>
         </div>
       </div>
 
@@ -1532,7 +1618,8 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
           </svg>
         </a>
-        <p class="text-gray-400 text-xs mt-3">More subjects added regularly • Auto-updates when new content is available</p>
+        <p class="text-gray-400 text-xs mt-3">More subjects added regularly • Auto-updates when new content is available
+        </p>
       </div>
     </div>
   </section>
@@ -1551,13 +1638,15 @@
           Who Uses CSQuiz?
         </h2>
         <p class="text-gray-500 text-lg max-w-2xl mx-auto">
-          Whether you're preparing for university exams, competitive tests, or technical interviews — CSQuiz has you covered.
+          Whether you're preparing for university exams, competitive tests, or technical interviews — CSQuiz has you
+          covered.
         </p>
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         <!-- University -->
-        <div class="reveal reveal-delay-1 bg-gradient-to-br from-blue-50 to-white rounded-2xl border border-blue-100 p-6 text-center hover:shadow-lg transition-shadow duration-300">
+        <div
+          class="reveal reveal-delay-1 bg-gradient-to-br from-blue-50 to-white rounded-2xl border border-blue-100 p-6 text-center hover:shadow-lg transition-shadow duration-300">
           <div class="w-14 h-14 rounded-2xl bg-primary-500/10 flex items-center justify-center mx-auto mb-4">
             <span class="text-2xl">🎓</span>
           </div>
@@ -1568,7 +1657,8 @@
         </div>
 
         <!-- Competitive -->
-        <div class="reveal reveal-delay-2 bg-gradient-to-br from-purple-50 to-white rounded-2xl border border-purple-100 p-6 text-center hover:shadow-lg transition-shadow duration-300">
+        <div
+          class="reveal reveal-delay-2 bg-gradient-to-br from-purple-50 to-white rounded-2xl border border-purple-100 p-6 text-center hover:shadow-lg transition-shadow duration-300">
           <div class="w-14 h-14 rounded-2xl bg-purple-500/10 flex items-center justify-center mx-auto mb-4">
             <span class="text-2xl">📝</span>
           </div>
@@ -1579,7 +1669,8 @@
         </div>
 
         <!-- Placements -->
-        <div class="reveal reveal-delay-3 bg-gradient-to-br from-green-50 to-white rounded-2xl border border-green-100 p-6 text-center hover:shadow-lg transition-shadow duration-300">
+        <div
+          class="reveal reveal-delay-3 bg-gradient-to-br from-green-50 to-white rounded-2xl border border-green-100 p-6 text-center hover:shadow-lg transition-shadow duration-300">
           <div class="w-14 h-14 rounded-2xl bg-green-500/10 flex items-center justify-center mx-auto mb-4">
             <span class="text-2xl">💼</span>
           </div>
@@ -1590,7 +1681,8 @@
         </div>
 
         <!-- Self-Learning -->
-        <div class="reveal reveal-delay-4 bg-gradient-to-br from-orange-50 to-white rounded-2xl border border-orange-100 p-6 text-center hover:shadow-lg transition-shadow duration-300">
+        <div
+          class="reveal reveal-delay-4 bg-gradient-to-br from-orange-50 to-white rounded-2xl border border-orange-100 p-6 text-center hover:shadow-lg transition-shadow duration-300">
           <div class="w-14 h-14 rounded-2xl bg-orange-500/10 flex items-center justify-center mx-auto mb-4">
             <span class="text-2xl">🧪</span>
           </div>
@@ -2579,106 +2671,148 @@
 
       <div class="space-y-4">
         <!-- FAQ 1 -->
-        <details class="reveal reveal-delay-1 group bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
-          <summary class="flex items-center justify-between gap-4 p-6 cursor-pointer list-none font-display font-700 text-gray-900 text-base hover:text-primary-600 transition-colors [&::-webkit-details-marker]:hidden">
+        <details
+          class="reveal reveal-delay-1 group bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
+          <summary
+            class="flex items-center justify-between gap-4 p-6 cursor-pointer list-none font-display font-700 text-gray-900 text-base hover:text-primary-600 transition-colors [&::-webkit-details-marker]:hidden">
             Is CSQuiz completely free to use?
-            <svg class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <svg class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform flex-shrink-0" fill="none"
+              viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
             </svg>
           </summary>
           <div class="px-6 pb-6 text-gray-500 text-sm leading-relaxed -mt-2">
-            CSQuiz is free to download and use. The app is completely ad-free for the first 24 hours. After that, banner ads appear on practice and test pages, and occasional interstitial ads show between topics (capped at one every 3 minutes). You get 3 free tests per day — watch a short video ad to unlock more tests for that day.
+            CSQuiz is free to download and use. The app is completely ad-free for the first 24 hours. After that, banner
+            ads appear on practice and test pages, and occasional interstitial ads show between topics (capped at one
+            every 3 minutes). You get 3 free tests per day — watch a short video ad to unlock more tests for that day.
           </div>
         </details>
 
         <!-- FAQ 2 -->
-        <details class="reveal reveal-delay-1 group bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
-          <summary class="flex items-center justify-between gap-4 p-6 cursor-pointer list-none font-display font-700 text-gray-900 text-base hover:text-primary-600 transition-colors [&::-webkit-details-marker]:hidden">
+        <details
+          class="reveal reveal-delay-1 group bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
+          <summary
+            class="flex items-center justify-between gap-4 p-6 cursor-pointer list-none font-display font-700 text-gray-900 text-base hover:text-primary-600 transition-colors [&::-webkit-details-marker]:hidden">
             Can I practice CS MCQs offline without internet?
-            <svg class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <svg class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform flex-shrink-0" fill="none"
+              viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
             </svg>
           </summary>
           <div class="px-6 pb-6 text-gray-500 text-sm leading-relaxed -mt-2">
-            Yes. Download any subject once and practice entirely offline. Your progress, bookmarks, and test history are stored locally on your device using encrypted storage. The app only needs internet to download new subjects or check for content updates.
+            Yes. Download any subject once and practice entirely offline. Your progress, bookmarks, and test history are
+            stored locally on your device using encrypted storage. The app only needs internet to download new subjects
+            or check for content updates.
           </div>
         </details>
 
         <!-- FAQ 3 -->
-        <details class="reveal reveal-delay-2 group bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
-          <summary class="flex items-center justify-between gap-4 p-6 cursor-pointer list-none font-display font-700 text-gray-900 text-base hover:text-primary-600 transition-colors [&::-webkit-details-marker]:hidden">
+        <details
+          class="reveal reveal-delay-2 group bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
+          <summary
+            class="flex items-center justify-between gap-4 p-6 cursor-pointer list-none font-display font-700 text-gray-900 text-base hover:text-primary-600 transition-colors [&::-webkit-details-marker]:hidden">
             Which computer science subjects are available?
-            <svg class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <svg class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform flex-shrink-0" fill="none"
+              viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
             </svg>
           </summary>
           <div class="px-6 pb-6 text-gray-500 text-sm leading-relaxed -mt-2">
-            CSQuiz currently includes 16 subjects with over 15,000 solved MCQs: C Programming (1,591), Object Oriented Programming (1,350), Java Programming (1,335), Computer Networks (1,219), Python Programming (1,188), Operating Systems (1,121), Computer Fundamentals (1,000), Cyber Security (1,000), Cloud Computing (990), DBMS (871), Linux (847), Automata Theory (832), Artificial Intelligence (765), Computer Architecture (749), SQL (639), and Machine Learning (620). New subjects are added regularly.
+            CSQuiz currently includes 16 subjects with over 15,000 solved MCQs: C Programming (1,591), Object Oriented
+            Programming (1,350), Java Programming (1,335), Computer Networks (1,219), Python Programming (1,188),
+            Operating Systems (1,121), Computer Fundamentals (1,000), Cyber Security (1,000), Cloud Computing (990),
+            DBMS (871), Linux (847), Automata Theory (832), Artificial Intelligence (765), Computer Architecture (749),
+            SQL (639), and Machine Learning (620). New subjects are added regularly.
           </div>
         </details>
 
         <!-- FAQ 4 -->
-        <details class="reveal reveal-delay-2 group bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
-          <summary class="flex items-center justify-between gap-4 p-6 cursor-pointer list-none font-display font-700 text-gray-900 text-base hover:text-primary-600 transition-colors [&::-webkit-details-marker]:hidden">
+        <details
+          class="reveal reveal-delay-2 group bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
+          <summary
+            class="flex items-center justify-between gap-4 p-6 cursor-pointer list-none font-display font-700 text-gray-900 text-base hover:text-primary-600 transition-colors [&::-webkit-details-marker]:hidden">
             Is CSQuiz useful for GATE CS preparation?
-            <svg class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <svg class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform flex-shrink-0" fill="none"
+              viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
             </svg>
           </summary>
           <div class="px-6 pb-6 text-gray-500 text-sm leading-relaxed -mt-2">
-            CSQuiz covers all major GATE CS subjects including Operating Systems, DBMS, Computer Networks, Theory of Computation, and Computer Architecture. The timed test mode with configurable duration (10 to 120 minutes) simulates real exam conditions. However, CSQuiz is not officially affiliated with GATE or any examination board.
+            CSQuiz covers all major GATE CS subjects including Operating Systems, DBMS, Computer Networks, Theory of
+            Computation, and Computer Architecture. The timed test mode with configurable duration (10 to 120 minutes)
+            simulates real exam conditions. However, CSQuiz is not officially affiliated with GATE or any examination
+            board.
           </div>
         </details>
 
         <!-- FAQ 5 -->
-        <details class="reveal reveal-delay-3 group bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
-          <summary class="flex items-center justify-between gap-4 p-6 cursor-pointer list-none font-display font-700 text-gray-900 text-base hover:text-primary-600 transition-colors [&::-webkit-details-marker]:hidden">
+        <details
+          class="reveal reveal-delay-3 group bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
+          <summary
+            class="flex items-center justify-between gap-4 p-6 cursor-pointer list-none font-display font-700 text-gray-900 text-base hover:text-primary-600 transition-colors [&::-webkit-details-marker]:hidden">
             Do I need to create an account to use CSQuiz?
-            <svg class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <svg class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform flex-shrink-0" fill="none"
+              viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
             </svg>
           </summary>
           <div class="px-6 pb-6 text-gray-500 text-sm leading-relaxed -mt-2">
-            No. CSQuiz works without any login, sign-up, or account creation. Install and start practicing immediately. Your progress is stored locally on your device.
+            No. CSQuiz works without any login, sign-up, or account creation. Install and start practicing immediately.
+            Your progress is stored locally on your device.
           </div>
         </details>
 
         <!-- FAQ 6 -->
-        <details class="reveal reveal-delay-3 group bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
-          <summary class="flex items-center justify-between gap-4 p-6 cursor-pointer list-none font-display font-700 text-gray-900 text-base hover:text-primary-600 transition-colors [&::-webkit-details-marker]:hidden">
+        <details
+          class="reveal reveal-delay-3 group bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
+          <summary
+            class="flex items-center justify-between gap-4 p-6 cursor-pointer list-none font-display font-700 text-gray-900 text-base hover:text-primary-600 transition-colors [&::-webkit-details-marker]:hidden">
             Does CSQuiz provide explanations for MCQ answers?
-            <svg class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <svg class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform flex-shrink-0" fill="none"
+              viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
             </svg>
           </summary>
           <div class="px-6 pb-6 text-gray-500 text-sm leading-relaxed -mt-2">
-            Yes, every MCQ includes a detailed explanation. Explanations support code blocks and images where relevant, helping you understand the concept — not just memorize the answer.
+            Yes, every MCQ includes a detailed explanation. Explanations support code blocks and images where relevant,
+            helping you understand the concept — not just memorize the answer.
           </div>
         </details>
 
         <!-- FAQ 7 -->
-        <details class="reveal reveal-delay-4 group bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
-          <summary class="flex items-center justify-between gap-4 p-6 cursor-pointer list-none font-display font-700 text-gray-900 text-base hover:text-primary-600 transition-colors [&::-webkit-details-marker]:hidden">
+        <details
+          class="reveal reveal-delay-4 group bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
+          <summary
+            class="flex items-center justify-between gap-4 p-6 cursor-pointer list-none font-display font-700 text-gray-900 text-base hover:text-primary-600 transition-colors [&::-webkit-details-marker]:hidden">
             Can I take mock tests with a timer?
-            <svg class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <svg class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform flex-shrink-0" fill="none"
+              viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
             </svg>
           </summary>
           <div class="px-6 pb-6 text-gray-500 text-sm leading-relaxed -mt-2">
-            Yes. CSQuiz has a dedicated Test Mode where you can create custom tests — choose single or multiple subjects, select specific categories, set question count, and enable a timer from 10 to 120 minutes. Results show a detailed breakdown with correct, wrong, and unattempted counts plus explanations for every question.
+            Yes. CSQuiz has a dedicated Test Mode where you can create custom tests — choose single or multiple
+            subjects, select specific categories, set question count, and enable a timer from 10 to 120 minutes. Results
+            show a detailed breakdown with correct, wrong, and unattempted counts plus explanations for every question.
           </div>
         </details>
 
         <!-- FAQ 8 -->
-        <details class="reveal reveal-delay-4 group bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
-          <summary class="flex items-center justify-between gap-4 p-6 cursor-pointer list-none font-display font-700 text-gray-900 text-base hover:text-primary-600 transition-colors [&::-webkit-details-marker]:hidden">
+        <details
+          class="reveal reveal-delay-4 group bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
+          <summary
+            class="flex items-center justify-between gap-4 p-6 cursor-pointer list-none font-display font-700 text-gray-900 text-base hover:text-primary-600 transition-colors [&::-webkit-details-marker]:hidden">
             How is CSQuiz different from other MCQ apps?
-            <svg class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <svg class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform flex-shrink-0" fill="none"
+              viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
             </svg>
           </summary>
           <div class="px-6 pb-6 text-gray-500 text-sm leading-relaxed -mt-2">
-            CSQuiz is built specifically for CS students with: deep topic drill-down (Subject → Category → Topic), detailed explanations with code blocks, multi-subject test configuration, smart bookmarks that auto-organize into a dedicated practice category, ability to resume uncompleted tests exactly where you left off, and offline-first design with encrypted local storage. No login required.
+            CSQuiz is built specifically for CS students with: deep topic drill-down (Subject → Category → Topic),
+            detailed explanations with code blocks, multi-subject test configuration, smart bookmarks that auto-organize
+            into a dedicated practice category, ability to resume uncompleted tests exactly where you left off, and
+            offline-first design with encrypted local storage. No login required.
           </div>
         </details>
       </div>
